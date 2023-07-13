@@ -1,0 +1,10 @@
+[package]
+name = "Examples"
+version = "0.0.0"
+
+[addresses]
+# 모듈의 주소는 기본값 사용
+hello_blockchain = "_"
+
+[dependencies]
+AptosFramework = { local = "../../framework/aptos-framework"}

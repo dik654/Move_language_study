@@ -1,4 +1,5 @@
 // Move.toml의 addresses에는 작성하는 모듈의 주소를 지정할 수 있다 
+// ::message는 message모듈을 선언하는 것
 module hello_blockchain::message {
     use std::error;
     use std::signer;

@@ -2,9 +2,11 @@ script {
     use aptos_framework::coin;
     // 명시적 타입인 phantom type CoinType을 사용한다
     fun main<CoinType>(sender: &signer, receiver_a: address, receiver_b: address, amount: u64) {
+        // sender에서 amount만큼 코인을 뽑아서 객체를 얻고
         let coin = coin::withdraw<CoinType>(sender, amount);
-
+        // 그 객체에서 절반을 뽑아서 객체를 만들어서
         let coins_a = coin::extract(&mut coins, amount / 2);
+        // receiver a, b의 coin 객체에 각각 코인 추가
         coin::deposit(receiver_a, coins_a);
         coin::deposit(receiver_b, coins);
     }
